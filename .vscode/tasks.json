@@ -46,173 +46,27 @@
 			}
 		},
 		{
-			"label": "Run Bth2 JWT on port 8082",
+			"label": "Inspect Bth2 process command line",
 			"type": "shell",
-			"command": "mvn",
+			"command": "Get-CimInstance",
 			"args": [
-				"-f",
-				"..\\BaiTh2SOA\\pom.xml",
-				"spring-boot:run"
-			],
-			"isBackground": true,
-			"problemMatcher": {
-				"owner": "bth2",
-				"pattern": {
-					"regexp": "^$"
-				},
-				"background": {
-					"activeOnStart": true,
-					"beginsPattern": ".*",
-					"endsPattern": "Started JwtRestApiApplication"
-				}
-			}
-		},
-		{
-			"label": "Inspect shared user database",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT table_name FROM information_schema.tables WHERE table_schema='user' AND table_name IN ('products','user'); SELECT COUNT(*) FROM user.user; SELECT COUNT(*) FROM user.products;"
+				"Win32_Process",
+				"-Filter",
+				"ProcessId = 1492",
+				"|",
+				"Select-Object",
+				"ProcessId,CommandLine"
 			],
 			"isBackground": false,
 			"problemMatcher": []
 		},
 		{
-			"label": "Check tables in user database",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SHOW TABLES FROM user;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Inspect user products schema",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT COUNT(*) FROM user.user; SELECT COUNT(*) FROM user.products; SHOW COLUMNS FROM user.products;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Check user database write",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT id, name, price, quantity FROM user.products WHERE id=8;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Check product database targets",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT id,name FROM user.products WHERE id=8; SELECT id,name FROM product_service.products WHERE id=8;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Verify ID 8 in user database",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT id, name FROM user.products WHERE id=8;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Verify ID 8 in product_service database",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT id, name FROM product_service.products WHERE id=8;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Stop old Product Service process",
+			"label": "Stop obsolete Bth2 service",
 			"type": "shell",
 			"command": "Stop-Process",
 			"args": [
 				"-Id",
-				"1152"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Remove old DB verification row",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-e",
-				"DELETE FROM product_service.products WHERE id=8;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Confirm shared user DB seed count",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT COUNT(*) FROM user.user; SELECT COUNT(*) FROM user.products;"
-			],
-			"isBackground": false,
-			"problemMatcher": []
-		},
-		{
-			"label": "Inspect new user DB row",
-			"type": "shell",
-			"command": "C:\\xampp\\mysql\\bin\\mysql.exe",
-			"args": [
-				"-u",
-				"root",
-				"-N",
-				"-e",
-				"SELECT id, name, price, quantity FROM user.products WHERE id=6;"
+				"1492"
 			],
 			"isBackground": false,
 			"problemMatcher": []

@@ -1,2 +1,5 @@
+com\example\productservice\auth\UserAuthServiceTest.class
+com\example\productservice\auth\JwtAuthenticationFilterTest.class
+com\example\productservice\auth\JwtServiceTest.class
 com\example\productservice\auth\AuthControllerTest.class
 com\example\productservice\product\ProductServiceTest.class

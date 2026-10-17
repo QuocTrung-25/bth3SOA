@@ -1,8 +1,10 @@
 com\example\productservice\auth\AuthController.class
 com\example\productservice\product\ProductService.class
 com\example\productservice\product\ProductResponse.class
-com\example\productservice\auth\AuthController$Bth2LoginRequest.class
 com\example\productservice\auth\LoginRequest.class
+com\example\productservice\auth\UserAuthService.class
+com\example\productservice\auth\JwtAuthenticationFilter.class
+com\example\productservice\auth\JwtService.class
 com\example\productservice\ProductServiceApplication.class
 com\example\productservice\auth\LoginErrorResponse.class
 com\example\productservice\product\Product.class

@@ -1,2 +1,5 @@
 C:\Users\Admin\Downloads\BTH3SOA\src\test\java\com\example\productservice\auth\AuthControllerTest.java
+C:\Users\Admin\Downloads\BTH3SOA\src\test\java\com\example\productservice\auth\JwtAuthenticationFilterTest.java
+C:\Users\Admin\Downloads\BTH3SOA\src\test\java\com\example\productservice\auth\JwtServiceTest.java
+C:\Users\Admin\Downloads\BTH3SOA\src\test\java\com\example\productservice\auth\UserAuthServiceTest.java
 C:\Users\Admin\Downloads\BTH3SOA\src\test\java\com\example\productservice\product\ProductServiceTest.java
