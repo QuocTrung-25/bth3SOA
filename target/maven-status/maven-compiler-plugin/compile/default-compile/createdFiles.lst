@@ -1,0 +1,12 @@
+com\example\productservice\auth\AuthController.class
+com\example\productservice\product\ProductService.class
+com\example\productservice\product\ProductResponse.class
+com\example\productservice\auth\AuthController$Bth2LoginRequest.class
+com\example\productservice\auth\LoginRequest.class
+com\example\productservice\ProductServiceApplication.class
+com\example\productservice\auth\LoginErrorResponse.class
+com\example\productservice\product\Product.class
+com\example\productservice\auth\LoginResponse.class
+com\example\productservice\product\ProductRepository.class
+com\example\productservice\product\ProductRequest.class
+com\example\productservice\product\ProductController.class
